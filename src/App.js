@@ -6,11 +6,9 @@ import './App.css';
 function App() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
   function fetchMoviesHandler(){
     setIsLoading(true);
-    setError(null);
-    fetch('https://swapi.dev/api/film').then(response => {
+    fetch('https://swapi.dev/api/films').then(response => {
              return response.json();
     }).then(data => {
       const transformMovies = data.results.map(movieData => {
